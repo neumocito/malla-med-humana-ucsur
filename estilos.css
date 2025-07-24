@@ -1,49 +1,51 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f8ff;
-  color: #333;
-  padding: 20px;
+  margin: 2rem;
 }
 
 h1 {
   text-align: center;
-  color: #0a6fa5;
-  margin-bottom: 40px;
+  color: #006699;
 }
 
 .semestre {
-  margin-bottom: 30px;
-  border-left: 6px solid #0a6fa5;
-  padding-left: 15px;
+  margin-bottom: 2rem;
 }
 
 .semestre h2 {
-  color: #0a6fa5;
-  margin-bottom: 10px;
+  background-color: #e0f2ff;
+  color: #004466;
+  padding: 0.5rem;
+  border-left: 4px solid #00aaff;
 }
 
-.materia {
+.ramo {
   display: inline-block;
-  margin: 5px;
-  padding: 10px 14px;
-  background-color: #e0f3ff;
-  border: 2px solid #0a6fa5;
+  margin: 0.4rem;
+  padding: 0.8rem 1rem;
+  background-color: #e6f7ff;
+  border: 2px solid #b3e5fc;
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.2s;
+  user-select: none;
 }
 
-.materia:hover {
-  background-color: #c7e9ff;
+.ramo:hover {
+  background-color: #d0f0ff;
 }
 
-.aprobado {
-  background-color: #a0eacb !important;
+.ramo.aprobado {
+  background-color: #b2ebf2;
+  border-color: #00acc1;
   text-decoration: line-through;
-  color: #000;
+  color: #007c91;
 }
 
-.bloqueado {
-  opacity: 0.4;
-  pointer-events: none;
+.ramo.bloqueado {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
 }
