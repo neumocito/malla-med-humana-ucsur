@@ -1,1 +1,60 @@
-# malla-med-humana-ucsur
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6f4ff;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #0077cc;
+}
+
+h2 {
+  margin-top: 2em;
+  color: #005f99;
+}
+
+.malla-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.semestre {
+  background: #ffffff;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.ramo {
+  background-color: #cce7ff;
+  padding: 0.6em 1em;
+  margin: 0.3em;
+  border: 2px solid #0077cc;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.ramo:hover {
+  background-color: #b3dbff;
+}
+
+.ramo.aprobado {
+  background-color: #a4e2a4;
+  text-decoration: line-through;
+  color: #1a4d1a;
+  border-color: #4caf50;
+}
+
+.ramo.bloqueado {
+  background-color: #e0e0e0;
+  color: #777;
+  border-color: #aaa;
+  cursor: not-allowed;
+}
