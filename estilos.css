@@ -1,51 +1,40 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f8ff;
-  margin: 2rem;
+  color: #333;
+  padding: 20px;
 }
 
 h1 {
-  text-align: center;
-  color: #006699;
+  color: #005b96;
 }
 
 .semestre {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 
 .semestre h2 {
-  background-color: #e0f2ff;
-  color: #004466;
-  padding: 0.5rem;
-  border-left: 4px solid #00aaff;
+  color: #0074d9;
+  margin-bottom: 10px;
 }
 
 .ramo {
-  display: inline-block;
-  margin: 0.4rem;
-  padding: 0.8rem 1rem;
-  background-color: #e6f7ff;
-  border: 2px solid #b3e5fc;
-  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s;
-  user-select: none;
+  padding: 4px 8px;
+  margin: 2px 0;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #e6f7ff;
+  transition: background-color 0.3s ease;
 }
 
 .ramo:hover {
-  background-color: #d0f0ff;
+  background-color: #cceeff;
 }
 
 .ramo.aprobado {
-  background-color: #b2ebf2;
-  border-color: #00acc1;
   text-decoration: line-through;
-  color: #007c91;
-}
-
-.ramo.bloqueado {
-  background-color: #f0f0f0;
-  border-color: #ccc;
-  color: #999;
-  cursor: not-allowed;
+  color: #888;
+  background-color: #d0f0c0;
 }
