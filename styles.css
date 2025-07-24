@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ffe6f0;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #ffb6c1;
+  padding: 1em;
+  text-align: center;
+}
+main {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  overflow-x: auto;
+}
+.semestre {
+  background: white;
+  border-radius: 10px;
+  padding: 1em;
+  min-width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.curso {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  background: #f3f3f3;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.curso.aprobado {
+  background: #b2fab2 !important;
+  text-decoration: line-through;
+}
+.curso.bloqueado {
+  background: #ccc;
+  cursor: not-allowed;
+}
