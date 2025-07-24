@@ -1,89 +1,158 @@
-// Estructura de ramos y sus dependencias
-const ramos = {
+const malla = {
   "I semestre": {
-    "Biología Celular y Molecular": ["Morfofisiología I", "Anatomía general", "Genética Médica", "Desarrollo y crecimiento", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Química": ["Bioquímica", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Matemática": ["Estadística General", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Lengua y Oratoria": ["Introducción a la Investigación", "Redacción General", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Introducción a la Medicina": ["Bioética", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Desempeño Universitario": ["Realidad Nacional", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"]
+    "Biología Celular y Molecular": [],
+    "Química": [],
+    "Matemática": [],
+    "Lengua y Oratoria": [],
+    "Introducción a la Medicina": [],
+    "Desempeño Universitario": []
   },
   "II semestre": {
-    "Morfofisiología I": ["Morfofisiología II", "Inmunología", "Morfofisiología III", "Infectología básica", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Anatomía General": ["Morfofisiología II", "Morfofisiología III", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Introducción a la Investigación": ["Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Bioquímica": ["Infectología básica", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Redacción General": ["Bioética", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"],
-    "Realidad Nacional": ["Fundamentos de Medicina Intercultural", "Pre-Internado", "Trabajo de Investigación", "Internado en Cirugía", "Internado en Ginecología y Obstetricia", "Internado en Medicina", "Internado en Pediatría"]
+    "Morfofisiología I": ["Biología Celular y Molecular"],
+    "Anatomía General": ["Biología Celular y Molecular"],
+    "Introducción a la Investigación": ["Lengua y Oratoria"],
+    "Bioquímica": ["Química"],
+    "Redacción General": ["Lengua y Oratoria"],
+    "Realidad Nacional": ["Desempeño Universitario"]
   },
-  // Puedes continuar con los siguientes semestres...
+  "III semestre": {
+    "Morfofisiología II": ["Morfofisiología I", "Anatomía General"],
+    "Inmunología": ["Morfofisiología I"],
+    "Estadística General": ["Matemática"],
+    "Filosofía": [],
+    "Genética Médica": ["Biología Celular y Molecular"],
+    "Educación Ambiental": []
+  },
+  "IV semestre": {
+    "Morfofisiología III": ["Morfofisiología II", "Anatomía General"],
+    "Fisiopatología I": ["Morfofisiología II"],
+    "Desarrollo y Crecimiento": ["Biología Celular y Molecular"],
+    "Infectología básica": ["Morfofisiología I", "Bioquímica"],
+    "Bioética": ["Introducción a la Medicina", "Redacción General"]
+  },
+  "V semestre": {
+    "Morfofisiología IV": ["Morfofisiología III"],
+    "Fisiopatología II": ["Fisiopatología I"],
+    "Salud Mental": ["Filosofía"],
+    "Fundamentos de Medicina Intercultural": ["Filosofía", "Realidad Nacional"],
+    "Bioestadística": ["Estadística General"]
+  },
+  "VI semestre": {
+    "Anatomía Patológica": ["Fisiopatología II"],
+    "Farmacología": ["Infectología básica"],
+    "Semiología": ["Morfofisiología III", "Fisiopatología I", "Inmunología"],
+    "Semiología basada en Simulación": ["Morfofisiología III", "Fisiopatología I"],
+    "Apoyo al diagnóstico": ["Morfofisiología IV"]
+  },
+  "VII semestre": {
+    "Metodología de la Investigación": ["Bioestadística"],
+    "Epidemiología": ["Bioestadística"],
+    "Nutrición y Prácticas Saludables": ["Farmacología"],
+    "Seguridad del Paciente y Calidad de la Atención Médica": ["Bioética"],
+    "Medicina Interna I": ["Semiología", "Semiología basada en Simulación", "Anatomía Patológica"]
+  },
+  "VIII semestre": {
+    "Medicina Basada en la Evidencia": ["Metodología de la Investigación", "Epidemiología"],
+    "Salud Pública": ["Epidemiología"],
+    "Atención Primaria en Salud": ["Epidemiología"],
+    "Medicina Interna II": ["Medicina Interna I"]
+  },
+  "IX semestre": {
+    "Tesis I": ["Medicina Basada en la Evidencia"],
+    "Medicina Interna III": ["Medicina Interna II"],
+    "Simulación Clínica Integrada": ["Medicina Interna II"],
+    "Terapéutica": ["Medicina Interna II"],
+    "Medicina Legal": ["Semiología", "Semiología basada en Simulación"]
+  },
+  "X semestre": {
+    "Análisis de Casos I": ["Medicina Interna III", "Simulación Clínica Integrada", "Terapéutica"],
+    "Cirugía": ["Medicina Interna III", "Simulación Clínica Integrada"],
+    "Simulación Quirúrgica": ["Medicina Interna III", "Simulación Clínica Integrada"],
+    "Cuidados Paliativos y Rehabilitación Física": ["Terapéutica"],
+    "Ecografía": ["Semiología", "Apoyo al diagnóstico"]
+  },
+  "XI semestre": {
+    "Tesis II": ["Tesis I"],
+    "Pediatría": ["Medicina Interna III"],
+    "Simulación Pediátrica": ["Simulación Clínica Integrada"],
+    "Ginecología y Obstetricia": ["Cirugía"],
+    "Simulación Gineco-Obstetra": ["Simulación Quirúrgica"]
+  },
+  "XII semestre": {
+    "Análisis de Casos II": ["Análisis de Casos I"],
+    "Gerencia en Salud": ["Atención Primaria en Salud"],
+    "Informática Biomédica": ["Atención Primaria en Salud"],
+    "Pre-Internado": [
+      "Biología Celular y Molecular", "Química", "Matemática", "Lengua y Oratoria", "Introducción a la Medicina", "Desempeño Universitario",
+      "Morfofisiología I", "Anatomía General", "Introducción a la Investigación", "Bioquímica", "Redacción General", "Realidad Nacional",
+      "Morfofisiología II", "Inmunología", "Estadística General", "Filosofía", "Genética Médica", "Educación Ambiental",
+      "Morfofisiología III", "Fisiopatología I", "Desarrollo y Crecimiento", "Infectología básica", "Bioética",
+      "Morfofisiología IV", "Fisiopatología II", "Salud Mental", "Fundamentos de Medicina Intercultural", "Bioestadística",
+      "Anatomía Patológica", "Farmacología", "Semiología", "Semiología basada en Simulación", "Apoyo al diagnóstico",
+      "Metodología de la Investigación", "Epidemiología", "Nutrición y Prácticas Saludables", "Seguridad del Paciente y Calidad de la Atención Médica",
+      "Medicina Interna I", "Medicina Basada en la Evidencia", "Salud Pública", "Atención Primaria en Salud", "Medicina Interna II",
+      "Tesis I", "Medicina Interna III", "Simulación Clínica Integrada", "Terapéutica", "Medicina Legal",
+      "Análisis de Casos I", "Cirugía", "Simulación Quirúrgica", "Cuidados Paliativos y Rehabilitación Física", "Ecografía",
+      "Tesis II", "Pediatría", "Simulación Pediátrica", "Ginecología y Obstetricia", "Simulación Gineco-Obstetra",
+      "Análisis de Casos II", "Gerencia en Salud", "Informática Biomédica"
+    ]
+  },
+  "XIII y XIV semestre": {
+    "Trabajo de Investigación": ["Pre-Internado"],
+    "Internado en Cirugía": ["Pre-Internado"],
+    "Internado en Ginecología y Obstetricia": ["Pre-Internado"],
+    "Internado en Medicina": ["Pre-Internado"],
+    "Internado en Pediatría": ["Pre-Internado"]
+  }
 };
 
-// Estado guardado
-let estado = JSON.parse(localStorage.getItem("mallaMedicina") || "{}");
+const contenedor = document.getElementById("contenedor-malla");
+const estado = JSON.parse(localStorage.getItem("estadoMalla") || "{}");
 
-// Crear interfaz
-const contenedor = document.getElementById("malla");
-
-for (const [semestre, cursos] of Object.entries(ramos)) {
-  const divSem = document.createElement("div");
-  divSem.className = "semestre";
-  const h2 = document.createElement("h2");
-  h2.textContent = semestre;
-  divSem.appendChild(h2);
-
-  for (const [materia, dependientes] of Object.entries(cursos)) {
-    const div = document.createElement("div");
-    div.className = "materia";
-    div.textContent = materia;
-    div.dataset.nombre = materia;
-    div.dataset.dependientes = JSON.stringify(dependientes);
-    if (estado[materia]) div.classList.add("aprobado");
-    divSem.appendChild(div);
+function esDesbloqueado(nombre) {
+  for (const semestre of Object.values(malla)) {
+    for (const [ramo, requisitos] of Object.entries(semestre)) {
+      if (ramo === nombre) {
+        return requisitos.every(req => estado[req]);
+      }
+    }
   }
-
-  contenedor.appendChild(divSem);
+  return false;
 }
 
-// Desbloqueo dinámico
-function actualizarDesbloqueos() {
-  const materias = document.querySelectorAll(".materia");
+function construirMalla() {
+  contenedor.innerHTML = "";
+  for (const [semestre, ramos] of Object.entries(malla)) {
+    const divSem = document.createElement("div");
+    divSem.className = "semestre";
+    const h2 = document.createElement("h2");
+    h2.textContent = semestre;
+    divSem.appendChild(h2);
 
-  const aprobadas = new Set(
-    [...materias].filter(m => m.classList.contains("aprobado")).map(m => m.dataset.nombre)
-  );
+    for (const [ramo, requisitos] of Object.entries(ramos)) {
+      const divRamo = document.createElement("div");
+      divRamo.textContent = ramo;
+      divRamo.className = "ramo";
 
-  materias.forEach(m => {
-    const nombre = m.dataset.nombre;
-    let bloqueado = false;
-
-    for (const [sem, cursos] of Object.entries(ramos)) {
-      for (const [curso, dependientes] of Object.entries(cursos)) {
-        if (dependientes.includes(nombre) && !aprobadas.has(curso)) {
-          bloqueado = true;
-        }
+      if (estado[ramo]) {
+        divRamo.classList.add("aprobado");
+      } else if (!esDesbloqueado(ramo) && requisitos.length > 0) {
+        divRamo.classList.add("bloqueado");
       }
+
+      divRamo.addEventListener("click", () => {
+        if (divRamo.classList.contains("bloqueado")) return;
+
+        estado[ramo] = !estado[ramo];
+        localStorage.setItem("estadoMalla", JSON.stringify(estado));
+        construirMalla();
+      });
+
+      divSem.appendChild(divRamo);
     }
 
-    if (!estado[nombre]) {
-      if (bloqueado) {
-        m.classList.add("bloqueado");
-      } else {
-        m.classList.remove("bloqueado");
-      }
-    }
-  });
+    contenedor.appendChild(divSem);
+  }
 }
 
-// Eventos
-document.querySelectorAll(".materia").forEach(el => {
-  el.addEventListener("click", () => {
-    const nombre = el.dataset.nombre;
-    el.classList.toggle("aprobado");
-    estado[nombre] = el.classList.contains("aprobado");
-    localStorage.setItem("mallaMedicina", JSON.stringify(estado));
-    actualizarDesbloqueos();
-  });
-});
-
-actualizarDesbloqueos();
+construirMalla();
