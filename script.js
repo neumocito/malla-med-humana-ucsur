@@ -1,25 +1,27 @@
-// script.js
-
 const malla = document.getElementById('malla');
-const estado = JSON.parse(localStorage.getItem('estadoMalla') || '{}');
+const estado = JSON.parse(localStorage.getItem('estadoMalla') || {});
 
-// Aquí irá el objeto con todos los cursos y sus requisitos
+// Define cursos y requisitos (fragmento de ejemplo, puedes continuar agregando)
 const cursos = {
-  // Ejemplo (sólo un fragmento de muestra):
   "Biología Celular y Molecular": [],
   "Química": [],
   "Matemática": [],
   "Lengua y Oratoria": [],
   "Introducción a la Medicina": [],
   "Desempeño Universitario": [],
-
   "Morfofisiología I": ["Biología Celular y Molecular"],
   "Anatomía General": ["Biología Celular y Molecular"],
   "Introducción a la Investigación": ["Lengua y Oratoria"],
   "Bioquímica": ["Química"],
   "Redacción General": ["Lengua y Oratoria"],
   "Realidad Nacional": ["Desempeño Universitario"],
-  // Agrega el resto de cursos aquí con sus requisitos...
+  "Morfofisiología II": ["Anatomía General", "Morfofisiología I"],
+  "Inmunología": ["Morfofisiología I"],
+  "Estadística General": ["Matemática"],
+  "Filosofía": [],
+  "Genética Médica": ["Biología Celular y Molecular"],
+  "Educación Ambiental": [],
+  // ... continúa el resto
 };
 
 function crearCurso(nombre) {
@@ -53,7 +55,8 @@ function actualizarTodos() {
   const semestres = [
     ["Biología Celular y Molecular", "Química", "Matemática", "Lengua y Oratoria", "Introducción a la Medicina", "Desempeño Universitario"],
     ["Morfofisiología I", "Anatomía General", "Introducción a la Investigación", "Bioquímica", "Redacción General", "Realidad Nacional"],
-    // Agrega el resto de semestres aquí...
+    ["Morfofisiología II", "Inmunología", "Estadística General", "Filosofía", "Genética Médica", "Educación Ambiental"],
+    // ... continúa agregando los 14 semestres + electivos
   ];
 
   semestres.forEach((ramos, i) => {
@@ -70,4 +73,3 @@ function actualizarTodos() {
 }
 
 actualizarTodos();
-
